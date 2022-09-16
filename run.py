@@ -16,13 +16,21 @@ for space in random_word:
     empty_guess += "_"
 print(empty_guess)
 
-# Get guess from user
-letter_guess = input("Guess a letter: ").lower()
+game_over = False
 
-# Check if letter guessed is a letter in the word
-for position in range(len(random_word)):
-    letter_position = random_word[position]
-    if letter_position == letter_guess:
-        empty_guess[position] = letter_position
+# Take guesses from user until all _ are filled
+while game_over = False:
+    # Get guess from user
+    letter_guess = input("Guess a letter: ").lower()
 
-print(empty_guess)
+    # Check if letter guessed is a letter in the word
+    for position in range(len(random_word)):
+        letter_position = random_word[position]
+        if letter_position == letter_guess:
+            empty_guess[position] = letter_position
+
+    print(empty_guess)
+    # Check if any _ are left 
+    if "_" not in empty_guess:
+        game_over = True
+        print("You Win!")
