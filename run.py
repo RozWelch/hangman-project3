@@ -2,7 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-stages = ['''
+hangman_lives = ['''
   +---+
   |   |
   O   |
@@ -99,3 +99,5 @@ while game_over == False:
     if "_" not in empty_guess:
         game_over = True
         print("You Win!")
+
+    print(hangman_lives[num_lives])
