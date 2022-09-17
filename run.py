@@ -98,6 +98,6 @@ while game_over == False:
     # Check if any _ are left 
     if "_" not in empty_guess:
         game_over = True
-        print("You Win!")
+        print("Congratulations!!! You Win!!!")
 
     print(hangman_lives[num_lives])
