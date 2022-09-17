@@ -19,7 +19,7 @@ SHEET = GSPREAD_CLIENT.open('hangman-words')
 
 easy_words = SHEET.worksheet('easy_words')
 
-data = easy_words.get_all_values()
+data = easy_words.row_values(1)
 print(data)
 
 random_word = random.choice(data)
