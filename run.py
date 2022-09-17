@@ -4,6 +4,7 @@
 
 import gspread
 from google.oauth2.service_account import Credentials
+import random
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -19,8 +20,9 @@ SHEET = GSPREAD_CLIENT.open('hangman-words')
 easy_words = SHEET.worksheet('easy_words')
 
 data = easy_words.get_all_values()
-
 print(data)
+
+random_word = random.choice(data)
 
 hangman_lives = ['''
   +---+
@@ -79,10 +81,6 @@ hangman_lives = ['''
 =========
 ''']
 
-# List of words to select randomly from
-# list_of_words = ["imagination", "tea", "client", "cookie", "mode", "setting", "injury", "university", "night", "appearance", "refrigerator", "freedom", "definition", "category", "desk", "awareness", "perception", "buyer", "user"]
-import random
-random_word = random.choice(data)
 
 num_lives = 6
 
