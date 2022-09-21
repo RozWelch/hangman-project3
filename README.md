@@ -1,31 +1,52 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+## HANGCOW 
+Hangcow is a fun game based on Hangman, but with a cow theme! It is a terminal based game, run on the Code Institue terminal on Heroku. Users try to guess a random word, until they are sucessful in guessing the work, or they run out of lives.
 
-Welcome RozWelch,
+Link to the site here (add link)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## Am I Responsive mockups
+(add link)
 
-## Reminders
+## Contents
+* How to play
+* Design Stage
+* Features and User experience
+* Technologies Used
+* Fixed and Unfixed Bugs
+* Validating and Testing
+* Deployment
+* Credits
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## How to play
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Hangcow follows the same rules as Hangman. A user will select a level easy, medium or difficult. A random word is selected, and '_' shown for each letter in the word. A user guesses a letter. The input is checked to see if it is an alphabetic, single letter. If not they are asked to input a letter again. If the letter is in the word, the correct letter is shown in its position in the word. If the letter is not in the word they loose a life. The user continues to guess until they run out of lives without completing the work, when a 'You loose' message is displayed; or they correctly guess the word, when a 'You win" message is displayed.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Design Stage
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+The game was designed to be easy to play, and also fun.
+Initially a flow chart was created: 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+## Features and User experience
 
-## Constraints
+Add images and text
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Technologies Used
 
------
-Happy coding!
+Add text
+
+## Fixed and Unfixed Bugs
+
+Add text
+
+## Validation and Testing
+
+* PEP8: The code was tested with no errors on: (http://pep8online.com/).
+
+## Deployment
+
+Add text
+
+## Credits
+
+Add text

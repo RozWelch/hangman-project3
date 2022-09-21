@@ -110,7 +110,7 @@ while game_over == False:
         num_lives -= 1
         if num_lives == 0:
             game_over = True
-            print("You loose.")
+            print("Sorry, you've lost this time.")
     
     print(empty_guess)
     # Check if any _ are left 
