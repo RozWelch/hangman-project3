@@ -106,7 +106,7 @@ print(f"for testing the code the solution is {random_word}")
 empty_guess = []
 for space in random_word:
     empty_guess += "_"
-print(empty_guess)
+print(*empty_guess, sep=" ")
 
 game_over = False
 
@@ -121,6 +121,7 @@ while game_over == False:
         if letter_position == letter_guess:
             empty_guess[position] = letter_position
 
+    # If letter not in word, loose a life, if no lives left print loose message
     if letter_guess not in random_word:
         num_lives -= 1
         if num_lives == 0:
@@ -128,7 +129,7 @@ while game_over == False:
             print(f"Sorry, you've lost the answer was {random_word}")
     
     print(empty_guess)
-    # Check if any _ are left 
+    # Check if any _ are left, if not print win message
     if "_" not in empty_guess:
         game_over = True
         print("Congratulations!!! You Win!!!")
