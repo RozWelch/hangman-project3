@@ -106,15 +106,16 @@ print(f"for testing the code the solution is {random_word}")
 empty_guess = []
 for space in random_word:
     empty_guess += "_"
-print(*empty_guess, sep=" ")
+print(empty_guess)
 
 game_over = False
 
 # Take guesses from user until all _ are filled
 while game_over == False:
-    # Get guess from user
-    letter_guess = input("Guess a letter: ").lower()
-
+  # Get guess from user
+  letter_guess = input("Guess a letter: ").lower()
+  # Check if entry is a valid input
+  if len(letter_guess) == 1 and letter_guess.isalpha():
     # Check if letter guessed is a letter in the word
     for position in range(len(random_word)):
         letter_position = random_word[position]
@@ -135,3 +136,5 @@ while game_over == False:
         print("Congratulations!!! You Win!!!")
 
     print(hangman_lives[num_lives])
+  else:
+    print('Not a valid entry, please try again')
