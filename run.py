@@ -1,10 +1,11 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Terminal of 80 characters wide and 24 rows high
 
+"""
+Code bases on Love Sandwiches - to imports lists of words from google sheets
+"""
 import gspread
 from google.oauth2.service_account import Credentials
-import random
+import random # For selecting a random word
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -20,69 +21,83 @@ SHEET = GSPREAD_CLIENT.open('hangman-words')
 easy_words = SHEET.worksheet('easy_words')
 
 data = easy_words.row_values(1)
-print(data)
 
 random_word = random.choice(data)
 
 hangman_lives = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
+*--------------*
+|              |
+|           __n__n__
+|    .------`-\OO/-'
+|   /  ##  ## (oo)
+|  / \## __   ./
+|     |//YY \|/
+|     |||   |||
+===============
 ''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
+*--------------*
+|              |
+|           __n__n__
+|    .------`-\OO/-'
+|   /  ##  ## (oo)
+|  / \## __   ./
+|     |//YY 
+|     |||   
+===============
 ''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
+*--------------*
+|              |
+|           __n__n__
+|    .------`-\OO/-'
+|   /  ##  ## (oo)
+|  / \## __   ./
+|     
+|       
+===============
 ''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
+*--------------*
+|              |
+|           __n__n__
+|    .------`-\OO/-'
+|   /         (oo)
+|  /      
+|     
+|       
+===============
 ''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
+*--------------*
+|              |
+|           __n__n__
+|    .------`-\OO/-'
+|             (oo)
+|         
+|     
+|       
+===============
 ''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
+*--------------*
+|              |
+|           __n__n__
+|            -\OO/-'
+|             (oo)
+|         
+|     
+|       
+===============
+''', '''
+*--------------*
+|              |
+|           
+|            
+|             
+|         
+|     
+|       
+===============
 ''']
 
 
-num_lives = 6
+num_lives = 7
 
 # Testing code
 print(f"for testing the code the solution is {random_word}")
@@ -110,7 +125,7 @@ while game_over == False:
         num_lives -= 1
         if num_lives == 0:
             game_over = True
-            print("Sorry, you've lost this time.")
+            print(f"Sorry, you've lost the answer was {random_word}")
     
     print(empty_guess)
     # Check if any _ are left 
