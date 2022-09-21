@@ -97,7 +97,7 @@ hangman_lives = ['''
 ''']
 
 
-num_lives = 7
+num_lives = 6
 
 # Testing code
 print(f"for testing the code the solution is {random_word}")
