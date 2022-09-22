@@ -37,9 +37,39 @@ hangman_lives = ['''
 |              |
 |           __n__n__
 |    .------`-\OO/-'
-|   /  ##  ## (oo)
-|  / \## __   ./
-|     |//YY 
+|   /         (oo)
+|  / \.  __   ./
+|     |//YY \|/
+|     |||   |||
+===============
+''', '''
+*--------------*
+|              |
+|           __n__n__
+|    .------`-\OO/-'
+|   /         (oo)
+|  / \.  __   ./
+|     |//   \|/
+|     |||   |||
+===============
+''', '''
+*--------------*
+|              |
+|           __n__n__
+|    .------`-\OO/-'
+|   /         (oo)
+|  / \.  __   ./
+|     |//   \|
+|     |||   ||
+===============
+''', '''
+*--------------*
+|              |
+|           __n__n__
+|    .------`-\OO/-'
+|   /         (oo)
+|  / \.  __   ./
+|     |//   
 |     |||   
 ===============
 ''', '''
@@ -47,8 +77,8 @@ hangman_lives = ['''
 |              |
 |           __n__n__
 |    .------`-\OO/-'
-|   /  ##  ## (oo)
-|  / \## __   ./
+|   /         (oo)
+|  / \.  __   ./
 |     
 |       
 ===============
@@ -94,7 +124,7 @@ hangman_lives = ['''
 ===============
 ''']
 
-num_lives = 6
+num_lives = 10
 
 # Select difficulty level
 print('Welcome to Hangcow! The rules are just like Hangman but with a cow theme.')
@@ -128,8 +158,13 @@ game_over = False
 while game_over == False:
   # Get guess from user
   letter_guess = input("Guess a letter: ").lower()
+  clear_console()
+
   # Check if entry is a valid input
   if len(letter_guess) == 1 and letter_guess.isalpha():
+        # Check if entry has aready been made
+    if letter_guess in empty_guess:
+        print(f"You've already guessed {letter_guess}")
     # Check if letter guessed is a letter in the word
     for position in range(len(random_word)):
         letter_position = random_word[position]
