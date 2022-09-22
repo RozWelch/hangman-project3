@@ -1,11 +1,10 @@
-# Terminal of 80 characters wide and 24 rows high
-
 """
 Code bases on Love Sandwiches - to imports lists of words from google sheets
 """
-import gspread
-from google.oauth2.service_account import Credentials
+import gspread # for accessing google sheet for word list
+from google.oauth2.service_account import Credentials 
 import random # For selecting a random word
+import os # For clearing the Termainal
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -18,11 +17,10 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman-words')
 
-easy_words = SHEET.worksheet('easy_words')
 
-data = easy_words.row_values(1)
-
-random_word = random.choice(data)
+# Functin for clearing the Termainal
+def clear_console():
+    os.system('clear')
 
 hangman_lives = ['''
 *--------------*
@@ -96,8 +94,24 @@ hangman_lives = ['''
 ===============
 ''']
 
-
 num_lives = 6
+
+# Select difficulty level
+print('Welcome to Hangcow! The rules are just like Hangman but with a cow theme.')
+selection = input('Select a difficulty level: 1 for Easy, 2 for Medium, or 3 for Difficult:')
+if selection == '1':
+    easy_words = SHEET.worksheet('easy_words')
+    data = easy_words.row_values(1)
+    random_word = random.choice(data)
+elif selection == '2':
+    medium_words = SHEET.worksheet('medium_words')
+    data = medium_words.row_values(1)
+    random_word = random.choice(data)
+elif selection == '3':
+    difficult_words = SHEET.worksheet('difficult_words')
+    data = difficult_words.row_values(1)
+    random_word = random.choice(data)
+clear_console()
 
 # Testing code
 print(f"for testing the code the solution is {random_word}")
@@ -136,5 +150,6 @@ while game_over == False:
         print("Congratulations!!! You Win!!!")
 
     print(hangman_lives[num_lives])
+    
   else:
     print('Not a valid entry, please try again')
