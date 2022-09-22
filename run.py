@@ -1,5 +1,5 @@
 """
-Code bases on Love Sandwiches - to imports lists of words from google sheets
+Code for google sheets basesd on Love Sandwiches tutorial - to imports lists of words 
 """
 import gspread # for accessing google sheet for word list
 from google.oauth2.service_account import Credentials 
@@ -17,6 +17,12 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman-words')
 
+"""
+Colorama - for using coloured text on the terminal
+"""
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 
 # Functin for clearing the Terminal
 def clear_console():
@@ -127,7 +133,7 @@ hangman_lives = ['''
 num_lives = 9
 
 # Select difficulty level
-print("""
+print(Fore.GREEN + """
   _    _                    _____                         __n__n__
  | |  | |                  / ____|                 .------`-\OO/-'
  | |__| | __ _ _ __   __ _| |     _____      __   /  ##  ## (oo)
@@ -137,8 +143,8 @@ print("""
                       __/ |                    
                      |___/                     
 """)
-print('Welcome to Hangcow!\nThe rules are just like Hangman but with a cow theme.')
-print('You have 9 lives to guess the word - good luck!')
+print(Fore.CYAN + 'Welcome to Hangcow!\nThe rules are just like Hangman but with a cow theme.\n')
+print('You have 9 lives to guess the word - good luck!\n')
 selection = input('Select a difficulty level: 1 for Easy, 2 for Medium, or 3 for Difficult: ')
 if selection == '1':
     easy_words = SHEET.worksheet('easy_words')
@@ -176,7 +182,7 @@ while game_over == False:
   if len(letter_guess) == 1 and letter_guess.isalpha():
         # Check if entry has aready been made
     if letter_guess in empty_guess:
-        print(f"You've already guessed {letter_guess}")
+        print(Fore.RED + f"You've already guessed {letter_guess}")
     # Check if letter guessed is a letter in the word
     for position in range(len(random_word)):
         letter_position = random_word[position]
@@ -189,14 +195,15 @@ while game_over == False:
         num_lives -= 1
         if num_lives == 0:
             game_over = True
-            print(f"Sorry, you've lost the answer was {random_word}")
+            print(Fore.RED + f"Sorry, you've lost the answer was {random_word}")
     
     # Check if any _ are left, if not print win message
     if "_" not in empty_guess:
         game_over = True
-        print("Congratulations!!! You Win!!!")
+        print(Fore.YELLOW + "Congratulations!!! You Win!!!")
 
     print(hangman_lives[num_lives])
     
   else:
-    print('Not a valid entry, please try again')
+    print(Fore.RED + 'Not a valid entry, please try again')
+    print(hangman_lives[num_lives])
