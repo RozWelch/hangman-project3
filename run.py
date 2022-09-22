@@ -28,7 +28,7 @@ colorama.init(autoreset=True)
 def clear_console():
     os.system('clear')
 
-hangman_lives = ['''
+hangman_lives = [Fore.GREEN + '''
 *--------------*
 |              |
 |           __n__n__
@@ -188,11 +188,13 @@ while game_over == False:
         letter_position = random_word[position]
         if letter_position == letter_guess:
             empty_guess[position] = letter_position
+            print(Fore.BLUE + 'Correct Guess!')
     print(f"{' '.join(empty_guess)}")
 
     # If letter not in word, loose a life, if no lives left print loose message
     if letter_guess not in random_word:
         num_lives -= 1
+        print(Fore.RED + 'Not a correct guess, you loose a life.')
         if num_lives == 0:
             game_over = True
             print(Fore.RED + f"Sorry, you've lost the answer was {random_word}")
