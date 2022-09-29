@@ -139,13 +139,13 @@ print(Fore.GREEN + """
  | |__| | __ _ _ __   __ _| |     _____      __   /  ##  ## (oo)
  |  __  |/ _` | '_ \ / _` | |    / _ \ \ /\ / /  / \## __   ./
  | |  | | (_| | | | | (_| | |___| (_) \ V  V /      |//YY \|/
- |_|  |_|\__,_|_| |_|\__, |\_____\___/ \_/\_/       |||   |||
-                      __/ |                    
+ |_|  |_|\__,_|_| |_|\__, |\_____\___/ \_/\_/  |||  |||   |||
+                      __/ ||||||||||||||||||||||||||||||||||||||||               
                      |___/                     
 """)
 print(Fore.CYAN + 'Welcome to Hangcow!\nThe rules are just like Hangman but with a cow theme.\n')
-print('You have 9 lives to guess the word - good luck!\n')
-selection = input('Select a difficulty level: 1 for Easy, 2 for Medium, or 3 for Difficult: ')
+print('You have 9 lives to guess the word - for each incorrect guess you loose a life.\n')
+selection = input('Select a difficulty level: 1 for Easy, 2 for Medium, or 3 for Difficult:\n')
 if selection == '1':
     easy_words = SHEET.worksheet('easy_words')
     data = easy_words.row_values(1)
@@ -175,7 +175,7 @@ print(f"{' '.join(empty_guess)}\n")
 # Take guesses from user until all _ are filled
 while game_over == False:
   # Get guess from user
-  letter_guess = input("Guess a letter: ").lower()
+  letter_guess = input("Guess a letter:\n").lower()
   clear_console()
 
   # Check if entry is a valid input
