@@ -24,117 +24,123 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
-# Functin for clearing the Terminal
+"""
+Function for clearing the terminal screen
+"""
 def clear_console():
     os.system('clear')
 
-hangman_lives = [Fore.GREEN + '''
-  *--------------*
-  |              |
-  |           __n__n__
-  |    .------`-\**/-'
-  |   /  ##  ## (oo)
-  |  / \## __   ./
-  |     |//YY \|/
-  |     |||   |||
-  ===============
+"""
+Function for showing hangman lives stage
+"""
+hangman_lives = [Fore.RED + '''
+    *--------------*
+    |              |
+    |           __n__n__
+    |    .------`-\**/-'
+    |   /  ##  ## (oo)
+    |  / \## __   ./
+    |     |//YY \|/
+    |     |||   |||
+    ===============
 ''', '''
-  *--------------*
-  |              |
-  |           __n__n__
-  |    .------`-\OO/-'
-  |   /         (oo)
-  |  / \.  __   ./
-  |     |//YY \|/
-  |     |||   |||
-  ===============
+    *--------------*
+    |              |
+    |           __n__n__
+    |    .------`-\OO/-'
+    |   /         (oo)
+    |  / \.  __   ./
+    |     |//YY \|/
+    |     |||   |||
+    ===============
 ''', '''
-  *--------------*
-  |              |
-  |           __n__n__
-  |    .------`-\OO/-'
-  |   /         (oo)
-  |  / \.  __   ./
-  |     |//   \|/
-  |     |||   |||
-  ===============
+    *--------------*
+    |              |
+    |           __n__n__
+    |    .------`-\OO/-'
+    |   /         (oo)
+    |  / \.  __   ./
+    |     |//   \|/
+    |     |||   |||
+    ===============
 ''', '''
-  *--------------*
-  |              |
-  |           __n__n__
-  |    .------`-\OO/-'
-  |   /         (oo)
-  |  / \.  __   ./
-  |     |//   \|
-  |     |||   ||
-  ===============
+    *--------------*
+    |              |
+    |           __n__n__
+    |    .------`-\OO/-'
+    |   /         (oo)
+    |  / \.  __   ./
+    |     |//   \|
+    |     |||   ||
+    ===============
 ''', '''
-  *--------------*
-  |              |
-  |           __n__n__
-  |    .------`-\OO/-'
-  |   /         (oo)
-  |  / \.  __   ./
-  |     |//   
-  |     |||   
-  ===============
+    *--------------*
+    |              |
+    |           __n__n__
+    |    .------`-\OO/-'
+    |   /         (oo)
+    |  / \.  __   ./
+    |     |//   
+    |     |||   
+    ===============
 ''', '''
-  *--------------*
-  |              |
-  |           __n__n__
-  |    .------`-\OO/-'
-  |   /         (oo)
-  |  / \.  __   ./
-  |     
-  |       
-  ===============
+    *--------------*
+    |              |
+    |           __n__n__
+    |    .------`-\OO/-'
+    |   /         (oo)
+    |  / \.  __   ./
+    |     
+    |       
+    ===============
 ''', '''
-  *--------------*
-  |              |
-  |           __n__n__
-  |    .------`-\OO/-'
-  |   /         (oo)
-  |  /      
-  |     
-  |       
-  ===============
+    *--------------*
+    |              |
+    |           __n__n__
+    |    .------`-\OO/-'
+    |   /         (oo)
+    |  /      
+    |     
+    |       
+    ===============
 ''', '''
-  *--------------*
-  |              |
-  |           __n__n__
-  |    .------`-\OO/-'
-  |             (oo)
-  |         
-  |     
-  |       
-  ===============
+    *--------------*
+    |              |
+    |           __n__n__
+    |    .------`-\OO/-'
+    |             (oo)
+    |         
+    |     
+    |       
+    ===============
 ''', '''
-  *--------------*
-  |              |
-  |           __n__n__
-  |            -\OO/-'
-  |             (oo)
-  |         
-  |     
-  |       
-  ===============
+    *--------------*
+    |              |
+    |           __n__n__
+    |            -\OO/-'
+    |             (oo)
+    |         
+    |     
+    |       
+    ===============
 ''', '''
-  *--------------*
-  |              |
-  |           
-  |            
-  |             
-  |         
-  |     
-  |       
-  ===============
+    *--------------*
+    |              |
+    |           
+    |            
+    |             
+    |         
+    |     
+    |       
+    ===============
 ''']
 
-num_lives = 9
-
-# Select difficulty level
-clear_console()
-print(Fore.GREEN + """
+"""
+Function for main page display
+"""
+def main_screen():
+  clear_console()
+  print(Fore.GREEN + """
    _    _                    _____                         __n__n__
   | |  | |                  / ____|                 .------`-\OO/-'
   | |__| | __ _ _ __   __ _| |     _____      __   /  ##  ## (oo)
@@ -143,69 +149,83 @@ print(Fore.GREEN + """
   |_|  |_|\__,_|_| |_|\__, |\_____\___/ \_/\_/  |||  |||   |||
                        __/ ||||||||||||||||||||||||||||||||||||||||               
                       |___/                     
-""")
-print(Fore.CYAN + '  Welcome to Hangcow.\n  The rules are just like Hangman but with a cow theme!\n')
-print('  You have 9 lives to guess the word - \n  for each incorrect guess you loose a life.\n')
-selection = input('  Select a difficulty level:\n  1 for Easy, 2 for Medium, or 3 for Difficult:\n  ')
-if selection == '1':
-    easy_words = SHEET.worksheet('easy_words')
-    data = easy_words.row_values(1)
-    random_word = random.choice(data)
-elif selection == '2':
-    medium_words = SHEET.worksheet('medium_words')
-    data = medium_words.row_values(1)
-    random_word = random.choice(data)
-elif selection == '3':
-    difficult_words = SHEET.worksheet('difficult_words')
-    data = difficult_words.row_values(1)
-    random_word = random.choice(data)
-clear_console()
+  """)
+  print(Fore.CYAN + '  Welcome to Hangcow.\n  The rules are just like Hangman but with a cow theme!\n')
+  print('  You have 9 lives to guess the word - \n  for each incorrect guess you loose a life.\n')
+  selection = input('  Select a difficulty level:\n  1 for Easy, 2 for Medium, or 3 for Difficult:\n  ')
+  if selection == '1':
+      easy_words = SHEET.worksheet('easy_words')
+      data = easy_words.row_values(1)
+      random_word = random.choice(data)
+      play_game(random_word)
+  elif selection == '2':
+      medium_words = SHEET.worksheet('medium_words')
+      data = medium_words.row_values(1)
+      random_word = random.choice(data)
+      play_game(random_word)
+  elif selection == '3':
+      difficult_words = SHEET.worksheet('difficult_words')
+      data = difficult_words.row_values(1)
+      random_word = random.choice(data)
+      play_game(random_word)
 
-# Testing code
-print(f"  for testing the code the solution is {random_word}")
 
-# Add a _ for each letter in the random word
-empty_guess = []
-for space in random_word:
-    empty_guess += "_"
+"""
+Function to play the game
+"""
+def play_game(random_word):
 
-game_over = False
+    clear_console()
 
-print(f"  {' '.join(empty_guess)}\n")
+    # Add a _ for each letter in the random word
+    empty_guess = []
+    for space in random_word:
+      empty_guess += "_"
 
-# Take guesses from user until all _ are filled
-while game_over == False:
-  # Get guess from user
-  letter_guess = input("  Guess a letter:\n  ").lower()
-  clear_console()
+    game_over = False
+    num_lives = 9
 
-  # Check if entry is a valid input
-  if len(letter_guess) == 1 and letter_guess.isalpha():
+    while game_over == False:
+      # Get guess from user
+      
+      print(hangman_lives[num_lives])
+      print(f"  {' '.join(empty_guess)}\n")
+      letter_guess = input("  Guess a letter:\n  ").lower()
+      clear_console()
+
+      # Check if entry is a valid input
+      if len(letter_guess) == 1 and letter_guess.isalpha():
         # Check if entry has aready been made
-    if letter_guess in empty_guess:
-        print(Fore.RED + f"  You've already guessed {letter_guess}")
-    # Check if letter guessed is a letter in the word
-    for position in range(len(random_word)):
-        letter_position = random_word[position]
-        if letter_position == letter_guess:
+        if letter_guess in empty_guess:
+          print(Fore.RED + f"  You've already guessed {letter_guess}")
+        # Check if letter guessed is a letter in the word
+        for position in range(len(random_word)):
+          letter_position = random_word[position]
+          if letter_position == letter_guess:
             empty_guess[position] = letter_position
-    print(f"  {' '.join(empty_guess)}")
+            print(Fore.YELLOW + "  Yes! Your letter is in the word")
 
-    # If letter not in word, loose a life, if no lives left print loose message
-    if letter_guess not in random_word:
-        num_lives -= 1
-        print(Fore.RED + '  Not a correct guess, you loose a life.')
-        if num_lives == 0:
-            game_over = True
-            print(Fore.RED + f"  Sorry, you've lost the answer was {random_word}")
+        # If letter not in word, loose a life, if no lives left print loose message
+        if letter_guess not in random_word:
+          num_lives -= 1
+          print(Fore.RED + '  Not a correct guess, you loose a life.')
+        elif num_lives == 0:
+          game_over = True
+          print(Fore.RED + f"  Sorry, you've lost the answer was {random_word}")
     
-    # Check if any _ are left, if not print win message
-    if "_" not in empty_guess:
-        game_over = True
-        print(Fore.YELLOW + "  Congratulations!!! You Win!!!")
+      # Check if any _ are left, if not print win message
+        if "_" not in empty_guess:
+          game_over = True
+          print(Fore.YELLOW + "  Congratulations!!! You Win!!!")
+    
+      else:
+        print(Fore.RED + '  Not a valid entry, please try again')
+           
 
-    print(hangman_lives[num_lives])
-    
-  else:
-    print(Fore.RED + '  Not a valid entry, please try again')
-    print(hangman_lives[num_lives])
+"""
+Main function to play the game
+"""
+def main():
+  main_screen()
+  
+main()
