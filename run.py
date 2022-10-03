@@ -209,7 +209,7 @@ def play_game(random_word):
         if letter_guess not in random_word:
           num_lives -= 1
           print(Fore.RED + '  Not a correct guess, you loose a life.')
-        elif num_lives == 0:
+        if num_lives == 0:
           game_over = True
           print(Fore.RED + f"  Sorry, you've lost the answer was {random_word}")
     
