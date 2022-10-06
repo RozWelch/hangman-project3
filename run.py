@@ -150,7 +150,7 @@ def main_screen():
                        __/ ||||||||||||||||||||||||||||||||||||||||               
                       |___/                     
   """)
-  print(Fore.CYAN + '  Welcome to Hangcow.\n  The rules are just like Hangman but with a cow theme!\n')
+  print(Fore.CYAN + '  Welcome to HangCow.\n  The rules are just like Hangman but with a cow theme!\n')
   print('  You have 9 lives to guess the word - \n  for each incorrect guess you loose a life.\n')
   selection = input('  Select a difficulty level:\n  1 for Easy, 2 for Medium, or 3 for Difficult:\n  ')
   if selection == '1':
@@ -183,12 +183,12 @@ def play_game(random_word):
       empty_guess += "_"
 
     game_over = False
-    num_lives = 9
+    lives_remaining = 9
 
     while game_over == False:
       # Get guess from user
       
-      print(hangman_lives[num_lives])
+      print(hangman_lives[lives_remaining])
       print(f"  {' '.join(empty_guess)}\n")
       letter_guess = input("  Guess a letter:\n  ").lower()
       clear_console()
@@ -207,11 +207,14 @@ def play_game(random_word):
 
         # If letter not in word, loose a life, if no lives left print loose message
         if letter_guess not in random_word:
-          num_lives -= 1
+          lives_remaining -= 1
           print(Fore.RED + '  Not a correct guess, you loose a life.')
-        if num_lives == 0:
+        if lives_remaining == 0:
           game_over = True
-          print(Fore.RED + f"  Sorry, you've lost the answer was {random_word}")
+          clear_console()
+          print(hangman_lives[lives_remaining])
+          print(Fore.RED + f"  Sorry, you've lost the answer was {random_word}\n")
+          play_again()
     
       # Check if any _ are left, if not print win message
         if "_" not in empty_guess:
@@ -221,6 +224,11 @@ def play_game(random_word):
       else:
         print(Fore.RED + '  Not a valid entry, please try again')
            
+def play_again():
+  play_again_answer = input('  Press Y to play again:\n  ').lower()
+  if play_again_answer == 'y':
+    main()
+
 
 """
 Main function to play the game
