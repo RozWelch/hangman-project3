@@ -33,7 +33,11 @@ Add images and text
 
 ## Technologies Used
 
-Add text
+* Languages: Python 
+* Libraries:  
+    * Random: To select a random word
+    * Os:for clearing the terminal
+    * Colorama: To add colour text to the terminal
 
 ## Fixed and Unfixed Bugs
 
@@ -45,7 +49,12 @@ Add text
 
 ## Deployment
 
-Add text
+* From the Heroku dashboard I clicked the create new app button, named the app and selected the Europe region and clicked 'Create app'
+* Then I clicked on the settings tab and set up the Config Vars: Key was CREDS, I copied the CREDS.json file into the value field, then clicked 'Add'. I also set up a Config Var - Key was PORT and value was 8000
+* Next I clicked 'Add Build pack' and added: Python first and then node.js, clicking 'Save' after each.
+* Then I went to the diploy section and selected connect to GitHub and selected my project name, and clicked connect to link up. I enabled automatic diploys for this project.
+* The app is then built, and we get an app was sucessfully built message and a button to take me to the deployed link.
+* I then tested the game, to check it works as per the terminal version. 
 
 ## Credits
 Code Institute for the mock terminal to deploy to a live site.
@@ -60,7 +69,7 @@ How to add colours to terminal:
 https://www.youtube.com/watch?v=u51Zjlnui4Y
 
 How to clear the console:
-https://appdividend.com/2022/06/03/how-to-clear-console-in-python/#:~:text=For%20the%20Windows%20system%2C%20to,('cls')%20command.
+https://appdividend.com/2022/06/03/how-to-clear-console-in-python/#:~:text=For%20the%20Windows%20system%2C%20to,('cls').
 
 Ascii art
 Cow: https://www.asciiart.eu/animals/cows
