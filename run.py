@@ -31,7 +31,7 @@ def clear_console():
     os.system('clear')
 
 """
-For showing hangman lives stage
+For showing HangCow lives stage
 """
 hangman_lives = [Fore.RED + '''
     *--------------*
@@ -218,7 +218,7 @@ def play_game(random_word):
         # If letter not in word, loose a life, if no lives left print loose message
         if letter_guess not in random_word:
           lives_remaining -= 1
-          print(Fore.RED + '  Not a correct guess, you loose a life.')
+          print(Fore.RED + f'  Not a correct guess, you loose a life. You have {lives_remaining} lives left')
         if lives_remaining == 0:
           game_over = True
           clear_console()
