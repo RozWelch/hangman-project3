@@ -135,6 +135,16 @@ hangman_lives = [Fore.RED + '''
     ===============
 ''']
 
+win_message = (Fore.GREEN + """
+  __        ___                        _              __n__n__                       
+  \ \  /\  / / _ _ __  _ __   ___ _ __| |      .------`-\OO/-'
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| |     /  ##  ## (oo)
+    \  /\  /  | | | | | | | |  __/ |  |_|    / \## __   ./
+     \/  \/   |_|_| |_|_| |_|\___|_|  (_)       |//YY \|/
+                                                |||   |||    
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
+""")
+
 """
 Function for main page display
 """
@@ -202,7 +212,7 @@ def play_game(random_word):
         # Check if letter guessed is a letter in the word
         for position in range(len(random_word)):
           letter_position = random_word[position]
-          if letter_position == letter_guess and letter_guess not in empty_guess:
+          if letter_position == letter_guess:
             empty_guess[position] = letter_position
             print(Fore.YELLOW + f"  Yes! '{letter_guess}', is in the word!")
         # If letter not in word, loose a life, if no lives left print loose message
@@ -220,8 +230,8 @@ def play_game(random_word):
         if "_" not in empty_guess:
           game_over = True
           clear_console()
-          print(Fore.YELLOW + "  Congratulations!!! You Win!!!")
-          print(hangman_lives[lives_remaining])
+          print(Fore.YELLOW + "  Congratulations!!! You Win! Your cow is free!\n")
+          print(win_message)
           play_again()
     
       else:
