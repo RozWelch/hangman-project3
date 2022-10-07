@@ -31,7 +31,7 @@ def clear_console():
     os.system('clear')
 
 """
-Function for showing hangman lives stage
+For showing hangman lives stage
 """
 hangman_lives = [Fore.RED + '''
     *--------------*
@@ -152,6 +152,7 @@ def main_screen():
   """)
   print(Fore.CYAN + '  Welcome to HangCow.\n  The rules are just like Hangman but with a cow theme!\n')
   print('  You have 9 lives to guess the word - \n  for each incorrect guess you loose a life.\n')
+  
   selection = input('  Select a difficulty level:\n  1 for Easy, 2 for Medium, or 3 for Difficult:\n  ')
   if selection == '1':
       easy_words = SHEET.worksheet('easy_words')
@@ -176,7 +177,7 @@ Function to play the game
 def play_game(random_word):
 
     clear_console()
-
+    print(Fore.CYAN + '  Best of luck!')
     # Add a _ for each letter in the random word
     empty_guess = []
     for space in random_word:
@@ -197,14 +198,13 @@ def play_game(random_word):
       if len(letter_guess) == 1 and letter_guess.isalpha():
         # Check if entry has aready been made
         if letter_guess in empty_guess:
-          print(Fore.RED + f"  You've already guessed {letter_guess}")
+          print(Fore.RED + f"  You've already guessed '{letter_guess}', try again")
         # Check if letter guessed is a letter in the word
         for position in range(len(random_word)):
           letter_position = random_word[position]
-          if letter_position == letter_guess:
+          if letter_position == letter_guess and letter_guess not in empty_guess:
             empty_guess[position] = letter_position
-            print(Fore.YELLOW + "  Yes! Your letter is in the word")
-
+            print(Fore.YELLOW + f"  Yes! '{letter_guess}', is in the word!")
         # If letter not in word, loose a life, if no lives left print loose message
         if letter_guess not in random_word:
           lives_remaining -= 1
@@ -212,14 +212,17 @@ def play_game(random_word):
         if lives_remaining == 0:
           game_over = True
           clear_console()
+          print(Fore.RED + f"  Sorry, you've lost the answer was {random_word}")
           print(hangman_lives[lives_remaining])
-          print(Fore.RED + f"  Sorry, you've lost the answer was {random_word}\n")
           play_again()
     
-      # Check if any _ are left, if not print win message
+        # Check if any _ are left, if not print win message
         if "_" not in empty_guess:
           game_over = True
+          clear_console()
           print(Fore.YELLOW + "  Congratulations!!! You Win!!!")
+          print(hangman_lives[lives_remaining])
+          play_again()
     
       else:
         print(Fore.RED + '  Not a valid entry, please try again')
