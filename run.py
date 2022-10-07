@@ -180,7 +180,18 @@ def main_screen():
       random_word = random.choice(data)
       play_game(random_word)
 
-
+"""
+Function to enter user name or create a new user name
+"""
+def user_name():
+  played_before = input('  Have you played before? y/n?:\n  ').lower()
+    if played_before == 'y':
+      already_a_user = input('  Please enter your name:\n  ').lower()
+    if played_before == 'n':
+      new_user = input('  Please enter your name:\n  ').lower()
+    else:
+      print('Please enter y or n.')
+      
 """
 Function to play the game
 """

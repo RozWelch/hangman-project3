@@ -1,7 +1,7 @@
 ## HANGCOW 
 Hangcow is a fun game based on Hangman, but with a cow theme! It is a terminal based game, run on the Code Institue terminal on Heroku. Users try to guess a random word, until they are sucessful in guessing the work, or they run out of lives.
 
-Link to the site here (add link)
+Link to the site here https://hangcow.herokuapp.com/
 
 ## Am I Responsive mockups
 (add link)
@@ -41,12 +41,29 @@ Add text
 
 ## Validation and Testing
 
-* PEP8: The code was tested with no errors on: (http://pep8online.com/).
+* add text
 
 ## Deployment
 
 Add text
 
 ## Credits
+Code Institute for the mock terminal to deploy to a live site.
 
-Add text
+Hangman ascii art:
+https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
+https://ascii.co.uk/art/hangman
+Hangman Tutorial (just watched for understanding, but I used my own code)
+https://www.youtube.com/watch?v=m4nEnsavl6w
+
+How to add colours to terminal:
+https://www.youtube.com/watch?v=u51Zjlnui4Y
+
+How to clear the console:
+https://appdividend.com/2022/06/03/how-to-clear-console-in-python/#:~:text=For%20the%20Windows%20system%2C%20to,('cls')%20command.
+
+Ascii art
+Cow: https://www.asciiart.eu/animals/cows
+Text: https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+Acknowledgements: Thanks to my mentor, my facilitator, my fellow students on Slack, tutoring support and to my friends for helping test the site.
