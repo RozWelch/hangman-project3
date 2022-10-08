@@ -162,6 +162,7 @@ def main_screen():
   """)
   print(Fore.CYAN + '  Welcome to HangCow.\n  The rules are just like Hangman but with a cow theme!\n')
   print('  You have 9 lives to guess the word - \n  for each incorrect guess you loose a life.\n')
+  print('  You can also enter the full word if you think you can gues it\n')
   select_level()
 
 """
@@ -249,8 +250,18 @@ def play_game(random_word):
           play_again()
     
       else:
-        print(Fore.RED + '  Not a valid entry, please try again')
-           
+        if letter_guess == random_word:
+          game_over = True
+          clear_console()
+          print(Fore.YELLOW + "  Congratulations!!! You Win! Your cow is free!\n")
+          print(win_message)
+          play_again()
+        else:
+          print(Fore.RED + '  Not a valid entry, please try again')
+     
+"""
+Function to play the game again
+"""           
 def play_again():
   play_again_answer = input('  Press Y to play again:\n  ').lower()
   if play_again_answer == 'y':
