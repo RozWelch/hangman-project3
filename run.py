@@ -203,30 +203,36 @@ def play_game(random_word):
 
     game_over = False
     lives_remaining = 9
+    letters_guessed =[]
 
     while game_over == False:
-      # Get guess from user
-      
+      # Get guess from user      
       print(hangman_lives[lives_remaining])
-      print(f"  {' '.join(empty_guess)}\n")
+      print(f"     {' '.join(empty_guess)}\n")
       letter_guess = input("  Guess a letter:\n  ").lower()
       clear_console()
 
       # Check if entry is a valid input
       if len(letter_guess) == 1 and letter_guess.isalpha():
         # Check if entry has aready been made
-        if letter_guess in empty_guess:
+        if letter_guess in letters_guessed:
           print(Fore.RED + f"  You've already guessed '{letter_guess}', try again")
+          print(hangman_lives[lives_remaining])
+          print(f"     {' '.join(empty_guess)}\n")
+          letter_guess = input("  Guess a letter:\n  ").lower()
+          clear_console()
         # Check if letter guessed is a letter in the word
         for position in range(len(random_word)):
           letter_position = random_word[position]
           if letter_position == letter_guess:
             empty_guess[position] = letter_position
             print(Fore.YELLOW + f"  Yes, '{letter_guess}' is in the word.")
+            letters_guessed.append(letter_guess)
         # If letter not in word, loose a life, if no lives left print loose message
         if letter_guess not in random_word:
           lives_remaining -= 1
           print(Fore.RED + f'  Not a correct guess, you loose a life. You have {lives_remaining} lives left')
+          letters_guessed.append(letter_guess)
         if lives_remaining == 0:
           game_over = True
           clear_console()
