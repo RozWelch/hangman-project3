@@ -168,26 +168,26 @@ def main_screen():
 Function to select a difficulty level
 """
 def select_level():
-  while True:
-    try:
-      selection = input('  Select a difficulty level:\n  1 for Easy, 2 for Medium, or 3 for Difficult:\n  ')
-      if selection == '1':
-        easy_words = SHEET.worksheet('easy_words')
-        data = easy_words.row_values(1)
-        random_word = random.choice(data)
-        play_game(random_word)
-      if selection == '2':
-        medium_words = SHEET.worksheet('medium_words')
-        data = medium_words.row_values(1)
-        random_word = random.choice(data)
-        play_game(random_word)
-      if selection == '3':
-        difficult_words = SHEET.worksheet('difficult_words')
-        data = difficult_words.row_values(1)
-        random_word = random.choice(data)
-        play_game(random_word)
-    except ValueError:
-      print('Please enter 1, 2, or 3')
+    difficulty_selection = False
+    while not difficulty_selection:
+        selection = input('  Select a difficulty level:\n  1 for Easy, 2 for Medium, or 3 for Difficult:\n  ')
+        if selection == '1':
+          easy_words = SHEET.worksheet('easy_words')
+          data = easy_words.row_values(1)
+          random_word = random.choice(data)
+          play_game(random_word)
+        elif selection == '2':
+          medium_words = SHEET.worksheet('medium_words')
+          data = medium_words.row_values(1)
+          random_word = random.choice(data)
+          play_game(random_word)
+        elif selection == '3':
+          difficult_words = SHEET.worksheet('difficult_words')
+          data = difficult_words.row_values(1)
+          random_word = random.choice(data)
+          play_game(random_word)
+        else:
+            print(Fore.RED + '  Please enter 1, 2 or 3')
       
 """
 Function to play the game
