@@ -38,10 +38,15 @@ Add images and text
     * Random: To select a random word
     * Os:for clearing the terminal
     * Colorama: To add colour text to the terminal
+* API: gspread: To read the google sheet  
 
 ## Fixed and Unfixed Bugs
 
-Add text
+* No known unfixed bugs
+
+* Fixed bugs:
+    * When I made the main game function, the game over funtion was not working properly, I changed an 'elif' to an 'if' and this solved the problem.
+    * When first deployed the ascii art had come out of place, I removed extra spaces that were on the right hand side of the artwork, and this resolved the issue.
 
 ## Validation and Testing
 

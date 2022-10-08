@@ -162,35 +162,32 @@ def main_screen():
   """)
   print(Fore.CYAN + '  Welcome to HangCow.\n  The rules are just like Hangman but with a cow theme!\n')
   print('  You have 9 lives to guess the word - \n  for each incorrect guess you loose a life.\n')
-  
-  selection = input('  Select a difficulty level:\n  1 for Easy, 2 for Medium, or 3 for Difficult:\n  ')
-  if selection == '1':
-      easy_words = SHEET.worksheet('easy_words')
-      data = easy_words.row_values(1)
-      random_word = random.choice(data)
-      play_game(random_word)
-  elif selection == '2':
-      medium_words = SHEET.worksheet('medium_words')
-      data = medium_words.row_values(1)
-      random_word = random.choice(data)
-      play_game(random_word)
-  elif selection == '3':
-      difficult_words = SHEET.worksheet('difficult_words')
-      data = difficult_words.row_values(1)
-      random_word = random.choice(data)
-      play_game(random_word)
+  select_level()
 
 """
-Function to enter user name or create a new user name
+Function to select a difficulty level
 """
-def user_name():
-  played_before = input('  Have you played before? y/n?:\n  ').lower()
-    if played_before == 'y':
-      already_a_user = input('  Please enter your name:\n  ').lower()
-    if played_before == 'n':
-      new_user = input('  Please enter your name:\n  ').lower()
-    else:
-      print('Please enter y or n.')
+def select_level():
+  while True:
+    try:
+      selection = input('  Select a difficulty level:\n  1 for Easy, 2 for Medium, or 3 for Difficult:\n  ')
+      if selection == '1':
+        easy_words = SHEET.worksheet('easy_words')
+        data = easy_words.row_values(1)
+        random_word = random.choice(data)
+        play_game(random_word)
+      if selection == '2':
+        medium_words = SHEET.worksheet('medium_words')
+        data = medium_words.row_values(1)
+        random_word = random.choice(data)
+        play_game(random_word)
+      if selection == '3':
+        difficult_words = SHEET.worksheet('difficult_words')
+        data = difficult_words.row_values(1)
+        random_word = random.choice(data)
+        play_game(random_word)
+    except ValueError:
+      print('Please enter 1, 2, or 3')
       
 """
 Function to play the game
@@ -225,7 +222,7 @@ def play_game(random_word):
           letter_position = random_word[position]
           if letter_position == letter_guess:
             empty_guess[position] = letter_position
-            print(Fore.YELLOW + f"  Yes! '{letter_guess}', is in the word!")
+            print(Fore.YELLOW + f"  Yes, '{letter_guess}' is in the word.")
         # If letter not in word, loose a life, if no lives left print loose message
         if letter_guess not in random_word:
           lives_remaining -= 1
