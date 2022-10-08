@@ -50,7 +50,14 @@ Add images and text
 
 ## Validation and Testing
 
-* add text
+* When tested the website generally recommended pep8online.com was down. 
+    * As a workaround, a PEP8 validator was used in the Gitpod Workspace directly by following these steps:
+    * Run the command pip3 install pycodestyle  Note that this extension may already be installed, in which case this command will do nothing.
+    * In my workspace, press Ctrl+Shift+P (or Cmd+Shift+P on Mac).
+    * Type the word linter into the search bar that appears, and click on Python: Select Linter from the filtered results.
+    * Select pycodestyle from the list.
+    * PEP8 errors would be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
+    * There were no PEP8 errors.
 
 ## Deployment
 
