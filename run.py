@@ -5,6 +5,7 @@ import gspread # for accessing google sheet for word list
 from google.oauth2.service_account import Credentials 
 import random # For selecting a random word
 import os # For clearing the Terminal
+import time # For timing the animations
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -144,6 +145,103 @@ win_message = (Fore.GREEN + """
                                                 |||   |||    
    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
 """)
+def win_message():
+    clear_console()
+    print(Fore.GREEN +"""
+  __        ___                         __n__n__
+  \ \  /\  / / _ _ __  _ __   ___.------`-\OO/-'
+   \ \/  \/ / | | '_ \| '_ \ / _/  ##  ## (oo)   
+    \  /\  /  | | | | | | | |  / \## __   ./
+     \/  \/   |_|_| |_|_| |_|\(_  |//YY \|/
+                                  |||   |||    
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
+""")
+
+    time.sleep(.3) # Sleep for 0.3 second
+
+    clear_console()
+
+    print(Fore.CYAN +"""
+  __        ___                           __n__n__
+  \ \  /\  / / _ _ __  _ __   ___  .------`-\^^/-'
+   \ \/  \/ / | | '_ \| '_ \ / _  /  ##  ## (oo)   
+    \  /\  /  | | | | | | | |  _ / \## __   ./
+     \/  \/   |_|_| |_|_| |_|\__(_  |//YY \|/
+                                    /||   /||    
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
+""")
+
+    time.sleep(.3) # Sleep for 0.3 second
+    
+    clear_console()
+
+    print(Fore.MAGENTA +"""
+  __        ___                        _      __n__n__
+  \ \  /\  / / _ _ __  _ __   ___ _ __ .------`-\OO/-'
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '_ /  ##  ## (oo)   
+    \  /\  /  | | | | | | | |  __/ | / \## __   ./
+     \/  \/   |_|_| |_|_| |_|\___|_ (_  |//YY \|/
+                                        |||   |||    
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
+""")
+
+    time.sleep(.3) # Sleep for 0.3 second
+
+    clear_console()
+
+    print(Fore.YELLOW +"""
+  __        ___                        _        __n__n__
+  \ \  /\  / / _ _ __  _ __   ___ _ __|  .------`-\^^/-'
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| /  ##  ## (oo)   
+    \  /\  /  | | | | | | | |  __/ |   - \## __   ./
+     \/  \/   |_|_| |_|_| |_|\___|_|  (_  |//YY \|/
+                                          /||   /||    
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
+""")
+
+    time.sleep(.3) # Sleep for 0.3 second
+
+    clear_console()
+
+    print(Fore.GREEN +"""
+  __        ___                        _          __n__n__
+  \ \  /\  / / _ _ __  _ __   ___ _ __| |  .------`-\OO/-'
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| | /  ##  ## (oo)   
+    \  /\  /  | | | | | | | |  __/ |  |_ / \## __   ./
+     \/  \/   |_|_| |_|_| |_|\___|_|  (_)   |//YY \|/
+                                            |||   |||    
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
+""")
+
+    time.sleep(.3) # Sleep for 0.3 second
+
+    clear_console()
+
+    print(Fore.CYAN +"""
+  __        ___                        _            __n__n__
+  \ \  /\  / / _ _ __  _ __   ___ _ __| |    .------`-\^^/-'
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| |   /  ##  ## (oo)   
+    \  /\  /  | | | | | | | |  __/ |  |_|  - \## __   ./
+     \/  \/   |_|_| |_|_| |_|\___|_|  (_)     |//YY \|/
+                                              /||   /||    
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
+""")
+
+    time.sleep(.3) # Sleep for 0.3 second
+
+    clear_console()
+
+    print(Fore.BLUE +"""
+  __        ___                        _              __n__n__
+  \ \  /\  / / _ _ __  _ __   ___ _ __| |      .------`-\OO/-'
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| |     /  ##  ## (oo)   <Moo!>
+    \  /\  /  | | | | | | | |  __/ |  |_|    / \## __   ./
+     \/  \/   |_|_| |_|_| |_|\___|_|  (_)       |//YY \|/
+                                                |||   |||
+   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
+""")
+
+    time.sleep(.3) # Sleep for 0.3 second
 
 """
 Function for main page display
@@ -246,7 +344,7 @@ def play_game(random_word):
           game_over = True
           clear_console()
           print(Fore.YELLOW + "  Congratulations!!! You Win! Your cow is free!\n")
-          print(win_message)
+          win_message()
           play_again()
     
       else:
@@ -254,7 +352,7 @@ def play_game(random_word):
           game_over = True
           clear_console()
           print(Fore.YELLOW + "  Congratulations!!! You Win! Your cow is free!\n")
-          print(win_message)
+          win_message()
           play_again()
         else:
           print(Fore.RED + '  Not a correct entry, please try again')
