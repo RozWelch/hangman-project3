@@ -135,16 +135,9 @@ hangman_lives = [Fore.RED + '''
     |       
     ===============
 ''']
-
-win_message = (Fore.GREEN + """
-  __        ___                        _              __n__n__
-  \ \  /\  / / _ _ __  _ __   ___ _ __| |      .------`-\^^/-'
-   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| |     /  ##  ## (oo)  <Moo!>
-    \  /\  /  | | | | | | | |  __/ |  |_|    / \## __   ./
-     \/  \/   |_|_| |_|_| |_|\___|_|  (_)       |//YY \|/
-                                                |||   |||    
-   ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
-""")
+"""
+Function for winning animation
+"""
 def win_message():
     clear_console()
     print(Fore.GREEN +"""
@@ -244,23 +237,121 @@ def win_message():
     time.sleep(.3) # Sleep for 0.3 second
 
 """
-Function for main page display
+Function for main page animation
 """
-def main_screen():
-  clear_console()
-  print(Fore.GREEN + """
+def homescreen_animation():
+    clear_console()
+    print(Fore.CYAN + """
+                                                           __n__n__
+  |                                                 .------`-\^^/-'
+  |                                                /  ##  ## (oo)
+  |                                               / \## __   ./
+  | |       _        |        _                      |//YY \|/
+  |_|     \_          \__  |\_____\_            |||  |||   |||
+                           |//////////////////////////////////////
+                           
+  """)
+
+    time.sleep(.2) # Sleep for 0.2 second
+    clear_console()
+    print(Fore.GREEN + """
+   _                                                       __n__n__
+  | |                                               .------`-\OO/-'
+  | |                                              /  ##  ## (oo)
+  |                   /    |                      / \## __   ./
+  | |       _        | (   |  ___  (   \             |//YY \|/
+  |_|     \_          \__  |\_____\_    \_      |||  |||   |||
+                           ||||||||||||||||||||||||||||||||||||||||
+                           
+  """)
+
+    time.sleep(.2) # Sleep for 0.2 second
+    clear_console()
+    print(Fore.BLUE + """
+   _                                                       __n__n__
+  | |                                               .------`-\^^/-'
+  | |_          _            |                     /  ##  ## (oo)
+  |  __     _  |      / _  | |        \ \         / \## __   ./
+  | |      (_        | (_  | |___  (_  \             |//YY \|/
+  |_|     \_          \__  |\_____\___  \_/     |||  |||   |||
+                        _  |//////////////////////////////////////
+                           
+  """)
+
+    time.sleep(.2) # Sleep for 0.2 second
+    clear_console()
+    print(Fore.CYAN + """
+   _                         _                             __n__n__
+  | |                       /                       .------`-\OO/-'
+  | |_          _          | |                     /  ##  ## (oo)
+  |  __     _  |      / _  | |        \ \ /       / \## __   ./
+  | |  |   (_|   |   | (_| | |___  (_  \ V           |//YY \|/
+  |_|  |_ \__,  _|    \__, |\_____\___  \_/\    |||  |||   |||
+                        _/ ||||||||||||||||||||||||||||||||||||||||
+                           
+  """)
+
+    time.sleep(.2) # Sleep for 0.2 second
+    clear_console()
+    print(Fore.GREEN + """
+   _                         _                             __n__n__
+  | |  |                    / __                    .------`-\^^/-'
+  | |__|   _    _      __  | |                     /  ##  ## (oo)
+  |  __   / _  | '_   / _` | |      _ \ \ /\      / \## __   ./
+  | |  |   (_|   | | | (_| | |___| (_) \ V           |//YY \|/
+  |_|  |_ \__,  _|    \__, |\_____\___/ \_/\_/  |||  |||   |||
+                        _/ |//////////////////////////////////////
+                           
+  """)
+
+    time.sleep(.2) # Sleep for 0.2 second
+    clear_console()
+    print(Fore.BLUE + """
+   _    _                    ____                          __n__n__
+  | |  | |                  / __                    .------`-\OO/-'
+  | |__|   __   _ _    __ _| |     _               /  ##  ## (oo)
+  |  __   / _` | '_   / _` | |    / _ \ \ /\ /    / \## __   ./
+  | |  |   (_|   | | | (_| | |___| (_) \ V  V        |//YY \|/
+  |_|  |_ \__,  _| |  \__, |\_____\___/ \_/\_/  |||  |||   |||
+                       __/ ||||||||||||||||||||||||||||||||||||||||
+                      |    
+  """)
+
+    time.sleep(.2) # Sleep for 0.2 second
+    clear_console()
+    print(Fore.CYAN + """
+   _    _                    _____                         __n__n__
+  | |  | |                  / __  |                 .------`-\^^/-'
+  | |__| | __ _ _ __   __ _| |     ___        __   /  ##  ## (oo)
+  |  __  |/ _` | '_ \ / _` | |    / _ \ \ /\ /    / \## __   ./
+  | |  |   (_|   | | | (_| | |___| (_) \ V  V        |//YY \|/
+  |_|  |_ \__,_ _| |  \__, |\_____\___/ \_/\_/  |||  |||   |||
+                       __/ |//////////////////////////////////////
+                      |__  
+  """)
+
+    time.sleep(.2) # Sleep for 0.2 second
+    clear_console()
+    print(Fore.GREEN + """
    _    _                    _____                         __n__n__
   | |  | |                  / ____|                 .------`-\OO/-'
-  | |__| | __ _ _ __   __ _| |     _____      __   /  ##  ## (oo)
+  | |__| | __ _ _ __   __ _| |     _____      __   /  ##  ## (oo) <Moo!>
   |  __  |/ _` | '_ \ / _` | |    / _ \ \ /\ / /  / \## __   ./
   | |  | | (_| | | | | (_| | |___| (_) \ V  V /      |//YY \|/
   |_|  |_|\__,_|_| |_|\__, |\_____\___/ \_/\_/  |||  |||   |||
                        __/ ||||||||||||||||||||||||||||||||||||||||
                       |___/                     
   """)
+
+"""
+Function for main page display
+"""
+def main_screen():
+  clear_console()
+  homescreen_animation()
   print(Fore.CYAN + '  Welcome to HangCow.\n  The rules are just like Hangman but with a cow theme!\n')
   print('  You have 9 lives to guess the word - \n  for each incorrect guess you loose a life.\n')
-  print('  You can also enter the full word if you think you can guess it\n')
+  print('  You can also enter the full word if you think you can guess it.\n')
   select_level()
 
 """
@@ -316,26 +407,23 @@ def play_game(random_word):
         # Check if entry has aready been made
         if letter_guess in letters_guessed:
           print(Fore.RED + f"  You've already guessed '{letter_guess}', try again")
-          print(hangman_lives[lives_remaining])
-          print(f"     {' '.join(empty_guess)}\n")
-          letter_guess = input("  Guess a letter:\n  ").lower()
-          clear_console()
+
         # Check if letter guessed is a letter in the word
         for position in range(len(random_word)):
           letter_position = random_word[position]
-          if letter_position == letter_guess:
+          if letter_position == letter_guess and letter_guess not in letters_guessed:
             empty_guess[position] = letter_position
-            print(Fore.YELLOW + f"  Yes, '{letter_guess}' is in the word.")
+            print(Fore.YELLOW + f"  Yes, '{letter_guess}' is in the word!")
             letters_guessed.append(letter_guess)
         # If letter not in word, loose a life, if no lives left print loose message
-        if letter_guess not in random_word:
+        if letter_guess not in random_word and letter_guess not in letters_guessed:
           lives_remaining -= 1
           print(Fore.RED + f'  Not a correct guess, you loose a life. You have {lives_remaining} lives left')
           letters_guessed.append(letter_guess)
         if lives_remaining == 0:
           game_over = True
           clear_console()
-          print(Fore.RED + f"  Sorry, you've lost the answer was {random_word}")
+          print(Fore.RED + f"  Sorry, you've lost the answer was {random_word}!!")
           print(hangman_lives[lives_remaining])
           play_again()
     
@@ -343,16 +431,16 @@ def play_game(random_word):
         if "_" not in empty_guess:
           game_over = True
           clear_console()
-          print(Fore.YELLOW + "  Congratulations!!! You Win! Your cow is free!\n")
           win_message()
+          print(f'  Yes, you won the word was {random_word}!\n')
           play_again()
     
       else:
         if letter_guess == random_word:
           game_over = True
           clear_console()
-          print(Fore.YELLOW + "  Congratulations!!! You Win! Your cow is free!\n")
           win_message()
+          print(f'  Yes, you won the word was {random_word}!\n')
           play_again()
         else:
           print(Fore.RED + '  Not a correct entry, please try again')
