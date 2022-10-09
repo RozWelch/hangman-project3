@@ -162,7 +162,7 @@ def main_screen():
   """)
   print(Fore.CYAN + '  Welcome to HangCow.\n  The rules are just like Hangman but with a cow theme!\n')
   print('  You have 9 lives to guess the word - \n  for each incorrect guess you loose a life.\n')
-  print('  You can also enter the full word if you think you can gues it\n')
+  print('  You can also enter the full word if you think you can guess it\n')
   select_level()
 
 """
@@ -257,7 +257,7 @@ def play_game(random_word):
           print(win_message)
           play_again()
         else:
-          print(Fore.RED + '  Not a valid entry, please try again')
+          print(Fore.RED + '  Not a correct entry, please try again')
      
 """
 Function to play the game again

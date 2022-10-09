@@ -12,10 +12,10 @@ Link to the site here https://hangcow.herokuapp.com/
 * Features and User experience
 * Technologies Used
 * Fixed and Unfixed Bugs
-* Validating and Testing
+* Validation
+* Testing
 * Deployment
 * Credits
-
 
 ## How to play
 
@@ -48,7 +48,7 @@ Add images and text
     * When I made the main game function, the game over funtion was not working properly, I changed an 'elif' to an 'if' and this solved the problem.
     * When first deployed the ascii art had come out of place, I removed extra spaces that were on the right hand side of the artwork, and this resolved the issue.
 
-## Validation and Testing
+## Validation 
 
 * When tested the website generally recommended pep8online.com was down. 
     * As a workaround, a PEP8 validator was used in the Gitpod Workspace directly by following these steps:
@@ -58,6 +58,10 @@ Add images and text
     * Select pycodestyle from the list.
     * PEP8 errors would be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
     * There were no PEP8 errors.
+
+## Testing
+
+* Add testing here
 
 ## Deployment
 
