@@ -411,7 +411,7 @@ def play_game(random_word):
         # Check if letter guessed is a letter in the word
         for position in range(len(random_word)):
           letter_position = random_word[position]
-          if letter_position == letter_guess and letter_guess not in letters_guessed:
+          if letter_position == letter_guess:
             empty_guess[position] = letter_position
             print(Fore.YELLOW + f"  Yes, '{letter_guess}' is in the word!")
             letters_guessed.append(letter_guess)
