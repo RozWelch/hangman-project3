@@ -1,11 +1,19 @@
 """
-Code for google sheets basesd on Love Sandwiches tutorial - to imports lists of words 
+Code for google sheets basesd on Love Sandwiches tutorial
 """
-import gspread # for accessing google sheet for word list
-from google.oauth2.service_account import Credentials 
-import random # For selecting a random word
-import os # For clearing the Terminal
-import time # For timing the animations
+# for accessing google sheet for word list
+import gspread
+from google.oauth2.service_account import Credentials
+# For selecting a random word
+import random
+# For clearing the Terminal
+import os
+# For timing the animations
+import time
+# For using coloured text in the terminal
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -18,18 +26,15 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman-words')
 
-"""
-Colorama - for using coloured text on the terminal
-"""
-import colorama
-from colorama import Fore, Back, Style
-colorama.init(autoreset=True)
 
 """
 Function for clearing the terminal screen
 """
+
+
 def clear_console():
     os.system('clear')
+
 
 """
 For showing HangCow lives stage
@@ -81,8 +86,8 @@ hangman_lives = [Fore.RED + '''
     |    .------`-\OO/-'
     |   /         (oo)
     |  / \.  __   ./
-    |     |//   
-    |     |||   
+    |     |//
+    |     |||
     ===============
 ''', '''
     *--------------*
@@ -91,8 +96,8 @@ hangman_lives = [Fore.RED + '''
     |    .------`-\OO/-'
     |   /         (oo)
     |  / \.  __   ./
-    |     
-    |       
+    |
+    |
     ===============
 ''', '''
     *--------------*
@@ -100,9 +105,9 @@ hangman_lives = [Fore.RED + '''
     |           __n__n__
     |    .------`-\OO/-'
     |   /         (oo)
-    |  /      
-    |     
-    |       
+    |  /
+    |
+    |
     ===============
 ''', '''
     *--------------*
@@ -110,9 +115,9 @@ hangman_lives = [Fore.RED + '''
     |           __n__n__
     |    .------`-\OO/-'
     |             (oo)
-    |         
-    |     
-    |       
+    |
+    |
+    |
     ===============
 ''', '''
     *--------------*
@@ -120,86 +125,88 @@ hangman_lives = [Fore.RED + '''
     |           __n__n__
     |            -\OO/-'
     |             (oo)
-    |         
-    |     
-    |       
+    |
+    |
+    |
     ===============
 ''', '''
     *--------------*
     |              |
-    |           
-    |            
-    |             
-    |         
-    |     
-    |       
+    |
+    |
+    |
+    |
+    |
+    |
     ===============
 ''']
 """
 Function for winning animation
 """
+
+
 def win_message():
     clear_console()
-    print(Fore.GREEN +"""
+    print(Fore.GREEN + """
   __        ___                         __n__n__
   \ \  /\  / / _ _ __  _ __   ___.------`-\OO/-'
-   \ \/  \/ / | | '_ \| '_ \ / _/  ##  ## (oo)   
+   \ \/  \/ / | | '_ \| '_ \ / _/  ##  ## (oo)
     \  /\  /  | | | | | | | |  / \## __   ./
      \/  \/   |_|_| |_|_| |_|\(_  |//YY \|/
-                                  |||   |||    
+                                  |||   |||
    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
 """)
 
-    time.sleep(.3) # Sleep for 0.3 second
+    time.sleep(.3)
 
     clear_console()
 
-    print(Fore.CYAN +"""
+    print(Fore.CYAN + """
   __        ___                           __n__n__
   \ \  /\  / / _ _ __  _ __   ___  .------`-\^^/-'
-   \ \/  \/ / | | '_ \| '_ \ / _  /  ##  ## (oo)   
+   \ \/  \/ / | | '_ \| '_ \ / _  /  ##  ## (oo)
     \  /\  /  | | | | | | | |  _ / \## __   ./
      \/  \/   |_|_| |_|_| |_|\__(_  |//YY \|/
-                                    /||   /||    
+                                    /||   /||
    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
 """)
 
-    time.sleep(.3) # Sleep for 0.3 second
-    
+    time.sleep(.3)
+
     clear_console()
 
-    print(Fore.MAGENTA +"""
+    print(Fore.MAGENTA + """
   __        ___                        _      __n__n__
   \ \  /\  / / _ _ __  _ __   ___ _ __ .------`-\OO/-'
-   \ \/  \/ / | | '_ \| '_ \ / _ \ '_ /  ##  ## (oo)   
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '_ /  ##  ## (oo)
     \  /\  /  | | | | | | | |  __/ | / \## __   ./
      \/  \/   |_|_| |_|_| |_|\___|_ (_  |//YY \|/
-                                        |||   |||    
+                                        |||   |||
    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
 """)
 
-    time.sleep(.3) # Sleep for 0.3 second
+    time.sleep(.3)
 
     clear_console()
 
-    print(Fore.YELLOW +"""
+    print(Fore.YELLOW + """
   __        ___                        _        __n__n__
   \ \  /\  / / _ _ __  _ __   ___ _ __|  .------`-\^^/-'
-   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| /  ##  ## (oo)   
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| /  ##  ## (oo)
     \  /\  /  | | | | | | | |  __/ |   - \## __   ./
      \/  \/   |_|_| |_|_| |_|\___|_|  (_  |//YY \|/
-                                          /||   /||    
+                                          /||   /||
    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  \n
 """)
 
-    time.sleep(.3) # Sleep for 0.3 second
+    time.sleep(.3)
 
     clear_console()
 
-    print(Fore.GREEN +"""
+    print(Fore.GREEN + """
   __        ___                        _          __n__n__
   \ \  /\  / / _ _ __  _ __   ___ _ __| |  .------`-\OO/-'
-   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| | /  ##  ## (oo)   
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '__| | /  ##  ## (oo)
     \  /\  /  | | | | | | | |  __/ |  |_ / \## __   ./
      \/  \/   |_|_| |_|_| |_|\___|_|  (_)   |//YY \|/
                                             |||   |||    
@@ -210,7 +217,7 @@ def win_message():
 
     clear_console()
 
-    print(Fore.CYAN +"""
+    print(Fore.CYAN + """
   __        ___                        _            __n__n__
   \ \  /\  / / _ _ __  _ __   ___ _ __| |    .------`-\^^/-'
    \ \/  \/ / | | '_ \| '_ \ / _ \ '__| |   /  ##  ## (oo)   
@@ -224,7 +231,7 @@ def win_message():
 
     clear_console()
 
-    print(Fore.BLUE +"""
+    print(Fore.BLUE + """
   __        ___                        _              __n__n__
   \ \  /\  / / _ _ __  _ __   ___ _ __| |      .------`-\OO/-'
    \ \/  \/ / | | '_ \| '_ \ / _ \ '__| |     /  ##  ## (oo)   <Moo!>
