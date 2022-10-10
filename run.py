@@ -432,7 +432,7 @@ def play_game(random_word):
           game_over = True
           clear_console()
           win_message()
-          print(f'  Yes, you won the word was {random_word}!\n')
+          print(f'  Yes, you won! The word was {random_word}!\n')
           play_again()
     
       else:

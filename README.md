@@ -1,5 +1,5 @@
 ## HANGCOW 
-Hangcow is a fun game based on Hangman, but with a cow theme! It is a terminal based game, run on the Code Institue terminal on Heroku. Users try to guess a random word, until they are sucessful in guessing the work, or they run out of lives.
+Hangcow is a fun game based on Hangman, but with a cow theme! It is a terminal based game, run on the Code Institute terminal on Heroku. Users try to guess a random word, until they are successful in guessing the work, or they run out of lives.
 
 Link to the site here https://hangcow.herokuapp.com/
 
@@ -83,7 +83,7 @@ Initially a flow chart was created to work out where the user should input data,
 * No known unfixed bugs
 
 * Fixed bugs:
-    * When I made the main game function, the game over funtion was not working properly, I changed an 'elif' to an 'if' and this solved the problem.
+    * When I made the main game function, the game over function was not working properly, I changed an 'elif' to an 'if' and this solved the problem.
 
 ## Validation 
 
@@ -101,13 +101,13 @@ Initially a flow chart was created to work out where the user should input data,
 * Tested on the local terminal, and tested the deployed site on Google Chrome on a mac and also a laptop
 
 * Main Screen:
-    * Tested: Animation displays properly on local and deployed verions
+    * Tested: Animation displays properly on local and deployed versions
     * Tested: Selection of 1, 2 or 3 selects correct list of words from google sheet
     * Tested: Input of entry other than 1, 2 or 3 asks the user to submit again
 
 * Main Game:
     * Tested: Entering a correct letter adds the letter to space on word
-    * Tested: Entering an incorrect letter takes away a life and adds to the hangcow lives graphic
+    * Tested: Entering an incorrect letter takes away a life and adds to the HangCow lives graphic
     * Tested: Entering a letter already guessed lets the user know, and allows the user guess again
     * Tested: Entering a invalid entry displays a message and allows the user to guess again
     * Tested: Finishing the word correctly brings the user to the winner screen
@@ -119,16 +119,16 @@ Initially a flow chart was created to work out where the user should input data,
 The project was created in Git Hub using the Code Institute template.
 
 The following commands were used throughout the project:
-* git add . - This command was used to add files to the staging area before commiting.
+* git add . - This command was used to add files to the staging area before committing.
 * git commit -m "I add commit message here" - This command was used to to commit changes to the local repository.
-* git push - This command is used to push all commited changes to the GitHub repository. 
+* git push - This command is used to push all committed changes to the GitHub repository. 
 
 * Deployment    
     * From the Heroku dashboard I clicked the create new app button, named the app and selected the Europe region and clicked 'Create app'
     * Then I clicked on the settings tab and set up the Config Vars: Key was CREDS, I copied the CREDS.json file into the value field, then clicked 'Add'. I also set up a Config Var - Key was PORT and value was 8000
     * Next I clicked 'Add Build pack' and added: Python first and then node.js, clicking 'Save' after each.
-    * Then I went to the diploy section and selected connect to GitHub and selected my project name, and clicked connect to link up. I enabled automatic diploys for this project.
-    * The app is then built, and we get an app was sucessfully built message and a button to take me to the deployed link.
+    * Then I went to the deploy section and selected connect to GitHub and selected my project name, and clicked connect to link up. I enabled automatic deploys for this project.
+    * The app is then built, and we get an app was successfully built message and a button to take me to the deployed link.
     * I then tested the game, to check it works as per the terminal version. 
 
 ## Credits
@@ -150,7 +150,7 @@ Ascii art
 Cow: https://www.asciiart.eu/animals/cows
 Text: https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 
-How to add Python sleep - for timing the anmimations:
+How to add Python sleep - for timing the animations:
 https://realpython.com/python-sleep/
 
 Acknowledgements: Thanks to my mentor, my facilitator, my fellow students on Slack, tutoring support and to my friends for helping test the site.
