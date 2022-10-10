@@ -4,32 +4,36 @@ Hangcow is a fun game based on Hangman, but with a cow theme! It is a terminal b
 Link to the site here https://hangcow.herokuapp.com/
 
 ## Am I Responsive mockups
-(add link)
+![Responsice Mockup](https://github.com/RozWelch/hangman-project3/readmeimages/amiresponsive.jpg)
 
 ## Contents
-* How to play
-* Design Stage
-* Features and User experience
-* Technologies Used
-* Fixed and Unfixed Bugs
-* Validation
-* Testing
-* Deployment
-* Credits
+* [How to play](#How-to-play)
+* [Design](#Design)
+* [Features and User experience](#Features-and-User-experience)
+* [Technologies Used](#Technologies-Used)
+* [Fixed and Unfixed Bugs](#Fixed-and-Unfixed-Bugs)
+* [Validation](#Validation)
+* [Testing](#Testing)
+* [Deployment](#Deployment)
+* [Credits](#Credits)
 
 ## How to play
 
 Hangcow follows the same rules as Hangman. A user will select a level easy, medium or difficult. A random word is selected, and '_' shown for each letter in the word. A user guesses a letter. The input is checked to see if it is an alphabetic, single letter. If not they are asked to input a letter again. If the letter is in the word, the correct letter is shown in its position in the word. If the letter is not in the word they loose a life. The user continues to guess until they run out of lives without completing the work, when a 'You loose' message is displayed; or they correctly guess the word, when a 'You win" message is displayed.
 
-## Design Stage
+## Design 
 
 The game was designed to be easy to play, and also fun.
 Initially a flow chart was created: 
-
+![Flowchart](https://github.com/RozWelch/hangman-project3/readmeimages/flowchart.gif)
 
 ## Features and User experience
 
 Add images and text
+
+* Future Features: 
+    * A feature to take a user's name and if they've played before display their previous score
+    * A table at the end of the game to show the top 5 scores
 
 ## Technologies Used
 
@@ -38,6 +42,7 @@ Add images and text
     * Random: To select a random word
     * Os:for clearing the terminal
     * Colorama: To add colour text to the terminal
+    * Time: For timing the animations
 * API: gspread: To read the google sheet  
 
 ## Fixed and Unfixed Bugs
@@ -46,7 +51,6 @@ Add images and text
 
 * Fixed bugs:
     * When I made the main game function, the game over funtion was not working properly, I changed an 'elif' to an 'if' and this solved the problem.
-    * When first deployed the ascii art had come out of place, I removed extra spaces that were on the right hand side of the artwork, and this resolved the issue.
 
 ## Validation 
 
