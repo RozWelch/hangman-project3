@@ -4,7 +4,7 @@ Hangcow is a fun game based on Hangman, but with a cow theme! It is a terminal b
 Link to the site here https://hangcow.herokuapp.com/
 
 ## Am I Responsive mockups
-![Responsice Mockup](https://github.com/RozWelch/hangman-project3/blob/main/readmeimages/amiresponsive.jpg)
+![Responsive Mockup](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/amiresponsive.jpg)
 
 ## Contents
 * [How to play](#How-to-play)
@@ -14,7 +14,7 @@ Link to the site here https://hangcow.herokuapp.com/
 * [Fixed and Unfixed Bugs](#Fixed-and-Unfixed-Bugs)
 * [Validation](#Validation)
 * [Testing](#Testing)
-* [Deployment](#Deployment)
+* [Project Creation and Deployment](#Project-Creation-and-Deployment)
 * [Credits](#Credits)
 
 ## How to play
@@ -25,7 +25,7 @@ Hangcow follows the same rules as Hangman. A user will select a level easy, medi
 
 The game was designed to be easy to play, and also fun.
 Initially a flow chart was created: 
-![Flowchart](https://github.com/RozWelch/hangman-project3/blob/main/readmeimages/flowchart.gif)
+![Flowchart](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/flowchart.jpg)
 
 ## Features and User experience
 
@@ -67,14 +67,22 @@ Add images and text
 
 * Add testing here
 
-## Deployment
+## Project Creation and Deployment
 
-* From the Heroku dashboard I clicked the create new app button, named the app and selected the Europe region and clicked 'Create app'
-* Then I clicked on the settings tab and set up the Config Vars: Key was CREDS, I copied the CREDS.json file into the value field, then clicked 'Add'. I also set up a Config Var - Key was PORT and value was 8000
-* Next I clicked 'Add Build pack' and added: Python first and then node.js, clicking 'Save' after each.
-* Then I went to the diploy section and selected connect to GitHub and selected my project name, and clicked connect to link up. I enabled automatic diploys for this project.
-* The app is then built, and we get an app was sucessfully built message and a button to take me to the deployed link.
-* I then tested the game, to check it works as per the terminal version. 
+The project was created in Git Hub using the Code Institute template.
+
+The following commands were used throughout the project:
+    * git add . - This command was used to add files to the staging area before commiting.
+    * git commit -m "I add commit message here" - This command was used to to commit changes to the local repository.
+    * git push - This command is used to push all commited changes to the GitHub repository. 
+
+* Deployment    
+    * From the Heroku dashboard I clicked the create new app button, named the app and selected the Europe region and clicked 'Create app'
+    * Then I clicked on the settings tab and set up the Config Vars: Key was CREDS, I copied the CREDS.json file into the value field, then clicked 'Add'. I also set up a Config Var - Key was PORT and value was 8000
+    * Next I clicked 'Add Build pack' and added: Python first and then node.js, clicking 'Save' after each.
+    * Then I went to the diploy section and selected connect to GitHub and selected my project name, and clicked connect to link up. I enabled automatic diploys for this project.
+    * The app is then built, and we get an app was sucessfully built message and a button to take me to the deployed link.
+    * I then tested the game, to check it works as per the terminal version. 
 
 ## Credits
 Code Institute for the mock terminal to deploy to a live site.
