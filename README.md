@@ -4,7 +4,7 @@ Hangcow is a fun game based on Hangman, but with a cow theme! It is a terminal b
 Link to the site here https://hangcow.herokuapp.com/
 
 ## Am I Responsive mockups
-![Responsice Mockup](https://github.com/RozWelch/hangman-project3/readmeimages/amiresponsive.jpg)
+![Responsice Mockup](https://github.com/RozWelch/hangman-project3/blob/main/readmeimages/amiresponsive.jpg)
 
 ## Contents
 * [How to play](#How-to-play)
@@ -25,7 +25,7 @@ Hangcow follows the same rules as Hangman. A user will select a level easy, medi
 
 The game was designed to be easy to play, and also fun.
 Initially a flow chart was created: 
-![Flowchart](https://github.com/RozWelch/hangman-project3/readmeimages/flowchart.gif)
+![Flowchart](https://github.com/RozWelch/hangman-project3/blob/main/readmeimages/flowchart.gif)
 
 ## Features and User experience
 
