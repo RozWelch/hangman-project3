@@ -19,13 +19,14 @@ Link to the site here https://hangcow.herokuapp.com/
 
 ## How to play
 
-Hangcow follows the same rules as Hangman. A user will select a level easy, medium or difficult. A random word is selected, and '_' shown for each letter in the word. A user guesses a letter. The input is checked to see if it is an alphabetic, single letter. If not they are asked to input a letter again. If the letter is in the word, the correct letter is shown in its position in the word. If the letter is not in the word they loose a life. The user continues to guess until they run out of lives without completing the work, when a 'You loose' message is displayed; or they correctly guess the word, when a 'You win" message is displayed.
+Hangcow follows the same rules as Hangman. A user will select a level easy, medium or difficult. A random word is selected, and '_' shown for each letter in the word. A user guesses a letter. The input is checked to see if it is an alphabetic, single letter. If not they are asked to input a letter again. If the letter is in the word, the correct letter is shown in its position in the word. If the letter is not in the word they loose a life. The user continues to guess until they run out of lives without completing the work, when a 'You loose' message is displayed; or they correctly guess the word, when a 'You win' message is displayed.
 
 ## Design 
 
 The game was designed to be easy to play, and also fun.
-Initially a flow chart was created: 
-![Flowchart](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/flowchart.jpg)
+I looked online at hangman games, and worked out the logic of how the game should work. 
+Initially a flow chart was created to work out where the user should input data, how to validate that data, and what happens for a correct or incorrect entry. I worked out how the game should end: 
+![Flowchart](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/flowchart.gif)
 
 ## Features and User experience
 
@@ -102,5 +103,8 @@ https://appdividend.com/2022/06/03/how-to-clear-console-in-python/#:~:text=For%2
 Ascii art
 Cow: https://www.asciiart.eu/animals/cows
 Text: https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+How to add Python sleep - for timing the anmimations:
+https://realpython.com/python-sleep/
 
 Acknowledgements: Thanks to my mentor, my facilitator, my fellow students on Slack, tutoring support and to my friends for helping test the site.
