@@ -108,7 +108,8 @@ Initially a flow chart was created to work out where the user should input data,
 * Main Game:
     * Tested: Entering a correct letter adds the letter to space on word
     * Tested: Entering an incorrect letter takes away a life and adds to the hangcow lives graphic
-    * Tested: Entering a letter already guessed lets the user know, and allows them guess again
+    * Tested: Entering a letter already guessed lets the user know, and allows the user guess again
+    * Tested: Entering a invalid entry displays a message and allows the user to guess again
     * Tested: Finishing the word correctly brings the user to the winner screen
     * Tested: Loosing all your lives brings the user to the loosing screen
     * Tested: Pressing any key at the end of the game brings the user back to the main screen
