@@ -95,7 +95,9 @@ Initially a flow chart was created to work out where the user should input data,
     * Type the word linter into the search bar that appears, and click on Python: Select Linter from the filtered results.
     * Select pycodestyle from the list.
     * PEP8 errors would be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
-    * There were no PEP8 errors.
+
+* Fixed: Extra spaces in code. Comments incorrectly added. Removed extra trailing spaces as hilighted.   
+* The ascii art was causing 'invalid escape sequence' warnings. I checked with tutor support and this was ok as they are just ascii artwork.  
 
 ## Testing
 
