@@ -19,7 +19,7 @@ Link to the site here https://hangcow.herokuapp.com/
 
 ## How to play
 
-Hangcow follows the same rules as Hangman. A user will select a level easy, medium or difficult. A random word is selected, and '_' shown for each letter in the word. A user guesses a letter. The input is checked to see if it is an alphabetic, single letter. If not they are asked to input a letter again. If the letter is in the word, the correct letter is shown in its position in the word. If the letter is not in the word they loose a life. The user continues to guess until they run out of lives without completing the work, when a 'You loose' message is displayed; or they correctly guess the word, when a 'You win' message is displayed.
+Hangcow follows the same rules as Hangman. A user will select a level easy, medium or difficult. A random word is selected, and '_' shown for each letter in the word. A user guesses a letter. The input is checked to see if it is an alphabetic, single letter. If not they are asked to input a letter again. If the letter is in the word, the correct letter is shown in its position in the word. If the letter is not in the word they loose a life. The user continues to guess until they run out of lives without guessing the word, when a 'You loose' message is displayed; or they correctly guess the word, then a 'You win' message is displayed.
 
 ## Design 
 
@@ -80,10 +80,11 @@ Initially a flow chart was created to work out where the user should input data,
 
 ## Fixed and Unfixed Bugs
 
-* No known unfixed bugs
-
 * Fixed bugs:
+    * When I wrote the code for the game I didn't have it defined within a function. I then moved it into the main game function. This caused my if statements to be incorrectly tabbed, and the game was not taking off a life correctly. I fixed it by retabbing the function and tested it and it worked properly again. 
     * When I made the main game function, the game over function was not working properly, I changed an 'elif' to an 'if' and this solved the problem.
+
+* No known unfixed bugs
 
 ## Validation 
 
