@@ -89,7 +89,7 @@ Initially a flow chart was created to work out where the user should input data,
 
 * When tested the website generally recommended pep8online.com was down. 
     * As a workaround, a PEP8 validator was used in the Gitpod Workspace directly by following these steps:
-    * Run the command pip3 install pycodestyle  Note that this extension may already be installed, in which case this command will do nothing.
+    * Run the command pip3 install pycodestyle (Note that this extension may already be installed, in which case this command will do nothing.)
     * In my workspace, press Ctrl+Shift+P (or Cmd+Shift+P on Mac).
     * Type the word linter into the search bar that appears, and click on Python: Select Linter from the filtered results.
     * Select pycodestyle from the list.
@@ -98,7 +98,20 @@ Initially a flow chart was created to work out where the user should input data,
 
 ## Testing
 
-* Add testing here
+* Tested on the local terminal, and tested the deployed site on Google Chrome on a mac and also a laptop
+
+* Main Screen:
+    * Tested: Animation displays properly on local and deployed verions
+    * Tested: Selection of 1, 2 or 3 selects correct list of words from google sheet
+    * Tested: Input of entry other than 1, 2 or 3 asks the user to submit again
+
+* Main Game:
+    * Tested: Entering a correct letter adds the letter to space on word
+    * Tested: Entering an incorrect letter takes away a life and adds to the hangcow lives graphic
+    * Tested: Entering a letter already guessed lets the user know, and allows them guess again
+    * Tested: Finishing the word correctly brings the user to the winner screen
+    * Tested: Loosing all your lives brings the user to the loosing screen
+    * Tested: Pressing any key at the end of the game brings the user back to the main screen
 
 ## Project Creation and Deployment
 
