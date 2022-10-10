@@ -449,9 +449,8 @@ def play_game(random_word):
 Function to play the game again
 """           
 def play_again():
-  play_again_answer = input('  Press Y to play again:\n  ').lower()
-  if play_again_answer == 'y':
-    main()
+  play_again_answer = input('  Press any key to play again:\n  ').lower()
+  main()
 
 
 """

@@ -30,7 +30,39 @@ Initially a flow chart was created to work out where the user should input data,
 
 ## Features and User experience
 
-Add images and text
+* Main Screen:
+    * The main screen displays the rules and allows the user to select a difficulty level
+    * An animated logo adds interest to the game
+    * UX: as a first time user I want to easily find out how to play the game 
+
+![Mainscreen](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/mainscreen.jpg)
+    
+* The user is asked to select a difficulty level
+    * UX: as a first time or returning user, I want to easily select a difficulty level
+
+![Difficulty](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/setdifficulty.jpg)
+
+* Main Game Play Screen:
+    * a graphic is displayed to show the user the lives remaining
+    * underneath a '_' is shown for each letter in the word
+    * UX: as a first time or returning user, I want to see what stage I am at in the game
+    * UX: as a first time or returning user, I want to see how many letters in the word I have to guess
+
+![firststage](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/firststage.jpg)
+
+* Correct, incorrect guesses or have already guessed messages:
+    * the user is given feedback on their input
+    * UX: as a first time or returning user, I want to receive feedback on my guesses
+
+![lettercorrect](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/lettercorrect.jpg)
+![incorrectletter](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/incorrectletter.jpg)
+![letteralreadyentered](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/letteralreadyentered.jpg)
+
+* Winner screen and animation:
+    * plays a winner animation if the user wins
+    * UX: as a first time or returning user, I want a fun way to find out I have won
+
+![winnerscreen](https://github.com/RozWelch/hangman-project3/blob/main/assets/readmeimages/winnerscreen.jpg)
 
 * Future Features: 
     * A feature to take a user's name and if they've played before display their previous score
@@ -73,9 +105,9 @@ Add images and text
 The project was created in Git Hub using the Code Institute template.
 
 The following commands were used throughout the project:
-    * git add . - This command was used to add files to the staging area before commiting.
-    * git commit -m "I add commit message here" - This command was used to to commit changes to the local repository.
-    * git push - This command is used to push all commited changes to the GitHub repository. 
+* git add . - This command was used to add files to the staging area before commiting.
+* git commit -m "I add commit message here" - This command was used to to commit changes to the local repository.
+* git push - This command is used to push all commited changes to the GitHub repository. 
 
 * Deployment    
     * From the Heroku dashboard I clicked the create new app button, named the app and selected the Europe region and clicked 'Create app'
